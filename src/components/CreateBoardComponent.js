@@ -39,11 +39,11 @@ class CreatBoardComponent extends Component {
     if (this.state.seq === "_create") {
       BoardService.createBoard(board).then((res) => {
         this.props.history.push("/board");
-      }); // Register 버튼 클릭 시 api에 작성 리퀘스트 보냄
+      }); // Save 버튼 클릭 시 api에 작성 리퀘스트 보냄
     } else {
       BoardService.updateBoard(this.state.seq, board).then((res) => {
         this.props.history.push("/board");
-      }); //register 버튼 클릭 시 api에 수정 리퀘스트 보냄
+      }); // Save 버튼 클릭 시 api에 수정 리퀘스트 보냄
     }
   };
 
@@ -118,9 +118,9 @@ class CreatBoardComponent extends Component {
                     style={{ margin: "20px" }}
                     onClick={this.createBoard}
                   >
-                    Register
+                    Save
                   </button>
-                  {/* Register 버튼 클릭 시 createBoard 함수 바인드 */}
+                  {/* Save 버튼 클릭 시 createBoard 함수 바인드 */}
                   <button
                     className="btn btn-danger"
                     onClick={this.cancel.bind(this)}
