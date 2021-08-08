@@ -23,7 +23,7 @@ class BoardService {
   updateBoard(seq, board) {
     return axios.pus(BOARD_API_BASE_URL + "/" + seq, board);
   }
-  // 게시글 수정, 경로 파라미터로 seq / 수정할 객체 정보를 담아 통신
+  // 게시글 수정, 경로 파라미터로 seq / 수정할 객체 정보를 board에 담아 통신
 
   deleteBoard(seq) {
     return axios.delete(BOARD_API_BASE_URL + "/" + seq);

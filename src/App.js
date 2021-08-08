@@ -19,7 +19,8 @@ function App() {
             <Route path="/create/:seq" component={CreatBoardComponent}></Route>
             {/* 게시글 작성 페이지 */}
             <Route path="/read/:seq" component={ReadBoardComponent}></Route>
-            {/* 게시글 상세 페이지 */}
+            {/* 게시글 상세 페이지
+                경로 파라미터 값 통해서 작성인지 수정인지 구분 */}
           </Switch>
           {/* url별로 페이지 전환하기 위해 switch 사용 */}
         </div>

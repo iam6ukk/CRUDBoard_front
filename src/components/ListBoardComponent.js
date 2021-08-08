@@ -11,7 +11,7 @@ class ListBoardComponent extends Component {
     // boards를 빈 배열로 state 설정
 
     this.createBoard = this.createBoard.bind(this);
-    // Post Add 버튼 클릭 시 createBoard 함수 바인드
+    // Post Add 버튼 클릭 시 동작할 createBoard 함수 바인드
   }
 
   componentDidMount() {
