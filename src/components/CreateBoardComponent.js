@@ -15,10 +15,10 @@ class CreatBoardComponent extends Component {
 
     this.changeTitleHandler = this.changeTitleHandler.bind(this);
     this.changeContentHandler = this.changeContentHandler.bind(this);
-    // 폼 양식에 title, content 입력 시 state값 변경
+    // title, content값 변경 시 해당 함수 바인드
 
     this.createBoard = this.createBoard.bind(this);
-    // Register 버튼 클릭 시 createBoard 함수 바인드
+    // save 버튼 클릭 시 createBoard 함수 바인드
   }
 
   changeTitleHandler = (event) => {
@@ -27,6 +27,7 @@ class CreatBoardComponent extends Component {
   changeContentHandler = (event) => {
     this.setState({ content: event.target.value });
   };
+  // 폼 양식에 title, content 입력 시 state값 변경
   // title, content에 값 대입, state update
 
   createBoard = (event) => {
