@@ -16,4 +16,4 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-// App.js 렌더링 한느 역할
+// App.js 렌더링 하는 역할

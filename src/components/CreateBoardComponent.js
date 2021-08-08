@@ -7,10 +7,10 @@ class CreatBoardComponent extends Component {
 
     this.state = {
       seq: this.props.match.params.seq,
+      // 글 작성인지 수정인지 구분
       title: "",
       content: "",
     };
-
     // title, content 빈 문자열로 state 설정
 
     this.changeTitleHandler = this.changeTitleHandler.bind(this);
@@ -18,16 +18,16 @@ class CreatBoardComponent extends Component {
     // title, content 입력 시 state값 변경
 
     this.createBoard = this.createBoard.bind(this);
+    // Register 버튼 클릭 시 createBoard 함수 바인드
   }
 
   changeTitleHandler = (event) => {
     this.setState({ title: event.target.value });
   };
-
   changeContentHandler = (event) => {
     this.setState({ content: event.target.value });
   };
-  // state update
+  // title, content에 값 대입, state update
 
   createBoard = (event) => {
     event.preventDefault();
@@ -46,7 +46,7 @@ class CreatBoardComponent extends Component {
       });
     }
   };
-  // register 버튼 클릭 시 api에 리퀘스트 보냄
+  // register 버튼 클릭 시 api에 작성 또는 수정 리퀘스트 보냄
 
   cancel() {
     this.props.history.push("/board");
@@ -57,9 +57,10 @@ class CreatBoardComponent extends Component {
     if (this.state.seq === "_create") {
       return <h3 className="text-center">새글을 작성해주세요</h3>;
     } else {
-      return <h3 className="text-center">{this.state.no}글을 수정 합니다.</h3>;
+      return <h3 className="text-center">{this.state.seq}글을 수정 합니다.</h3>;
     }
   }
+  // 작성인지 수정인지 구분해 페이지 타이틀 출력
 
   componentDidMount() {
     if (this.state.no === "_create") {
@@ -76,6 +77,8 @@ class CreatBoardComponent extends Component {
       });
     }
   }
+  // 로딩 시 글 작성이면 비어있는 폼
+  // 수정이면 글 객체 값 가져옴
 
   render() {
     return (
@@ -97,6 +100,7 @@ class CreatBoardComponent extends Component {
                       onChange={this.changeTitleHandler}
                     />
                   </div>
+                  {/* title 작성 -> changeTitleHandler 함수 바인드 */}
                   <div>
                     <label>Content</label>
                     <textarea
@@ -107,6 +111,7 @@ class CreatBoardComponent extends Component {
                       onChange={this.changeContentHandler}
                     />
                   </div>
+                  {/* content 작성 -> changeContentHandler 함수 바인드 */}
                   <button
                     className="btn btn-success"
                     style={{ margin: "20px" }}
@@ -114,12 +119,14 @@ class CreatBoardComponent extends Component {
                   >
                     Register
                   </button>
+                  {/* Register 버튼 클릭 시 createBoard 함수 바인드 */}
                   <button
                     className="btn btn-danger"
                     onClick={this.cancel.bind(this)}
                   >
                     Cancel
                   </button>
+                  {/* Cancel 버튼 클릭 시 cancel 함수 바인드 */}
                 </form>
               </div>
             </div>
