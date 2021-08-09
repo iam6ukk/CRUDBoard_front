@@ -36,7 +36,7 @@ class ListBoardComponent extends Component {
   render() {
     return (
       <div>
-        <h3>CURD Board List</h3>
+        <h3>CRUD Board List</h3>
         <div>
           <button
             className="btn btn-primary"

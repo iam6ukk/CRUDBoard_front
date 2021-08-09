@@ -33,7 +33,7 @@ class ReadBoardComponent extends Component {
     event.preventDefault();
     this.props.history.push(`/create/${this.state.seq}`);
   };
-  // 게시글 수정
+  // 게시글 수정을 위해 페이지 이동
 
   deleteView = async function () {
     if (window.confirm("삭제하나요?")) {

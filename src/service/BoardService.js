@@ -21,7 +21,7 @@ class BoardService {
   // 게시글 상세 페이지, 경로 파라미터로 seq 설정해 통신
 
   updateBoard(seq, board) {
-    return axios.pus(BOARD_API_BASE_URL + "/" + seq, board);
+    return axios.put(BOARD_API_BASE_URL + "/" + seq, board);
   }
   // 게시글 수정, 경로 파라미터로 seq / 수정할 객체 정보를 board에 담아 통신
 
