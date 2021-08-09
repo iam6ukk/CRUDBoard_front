@@ -71,7 +71,7 @@ class ReadBoardComponent extends Component {
               onClick={this.goToList.bind(this)}
               style={{ marginLeft: "10px" }}
             >
-              Go Board List
+              Go Board
             </button>
             {/* 버튼 클릭 시  goToList함수 바인드 */}
             <button

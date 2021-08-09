@@ -36,7 +36,7 @@ class ListBoardComponent extends Component {
   render() {
     return (
       <div>
-        <h3>CRUD Board List</h3>
+        <h3>CRUD Board</h3>
         <div>
           <button
             className="btn btn-primary"
@@ -61,14 +61,20 @@ class ListBoardComponent extends Component {
               {this.state.boards.map((board) => (
                 // map함수 사용해서 boards의 데이터 출력
                 <tr key={board.seq}>
-                  <td>{board.seq}</td>
+                  <td>
+                    <a onClick={() => this.readBoard(board.seq)}>{board.seq}</a>
+                  </td>
                   <td>
                     <a onClick={() => this.readBoard(board.seq)}>
                       {board.title}
                     </a>
                   </td>
-                  {/* title 클릭 시 readBoard 함수 바인드 */}
-                  <td>{board.content}</td>
+                  <td>
+                    <a onClick={() => this.readBoard(board.seq)}>
+                      {board.content}
+                    </a>
+                  </td>
+                  {/* seq, title, content 클릭 시 readBoard 함수 실행 */}
                   <td>{board.reg_dt}</td>
                 </tr>
               ))}

@@ -32,6 +32,7 @@ class CreatBoardComponent extends Component {
 
   createBoard = (event) => {
     event.preventDefault();
+    // 기본으로 정의된 이벤트 작동 못하게
     let board = {
       title: this.state.title,
       content: this.state.content,
@@ -102,7 +103,7 @@ class CreatBoardComponent extends Component {
                       onChange={this.changeTitleHandler}
                     />
                   </div>
-                  {/* title 작성 -> changeTitleHandler 함수 바인드 */}
+                  {/* title 작성 -> changeTitleHandler 함수 실행 */}
                   <div>
                     <label>Content</label>
                     <textarea
@@ -113,7 +114,7 @@ class CreatBoardComponent extends Component {
                       onChange={this.changeContentHandler}
                     />
                   </div>
-                  {/* content 작성 -> changeContentHandler 함수 바인드 */}
+                  {/* content 작성 -> changeContentHandler 함수 실행 */}
                   <button
                     className="btn btn-success"
                     style={{ margin: "20px" }}
@@ -121,14 +122,14 @@ class CreatBoardComponent extends Component {
                   >
                     Save
                   </button>
-                  {/* Save 버튼 클릭 시 createBoard 함수 바인드 */}
+                  {/* Save 버튼 클릭 시 createBoard 함수 실행 */}
                   <button
                     className="btn btn-danger"
                     onClick={this.cancel.bind(this)}
                   >
                     Cancel
                   </button>
-                  {/* Cancel 버튼 클릭 시 cancel 함수 바인드 */}
+                  {/* Cancel 버튼 클릭 시 cancel 함수 실행 */}
                 </form>
               </div>
             </div>
