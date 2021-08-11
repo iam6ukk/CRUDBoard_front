@@ -5,8 +5,8 @@ const BOARD_API_BASE_URL = "http://localhost:8080/api/board";
 // api의 url
 
 class BoardService {
-  getBoards() {
-    return axios.get(BOARD_API_BASE_URL);
+  getBoards(p_num) {
+    return axios.get(BOARD_API_BASE_URL + "?p_num=" + p_num);
   }
   // 게시판 목록
 
@@ -18,7 +18,7 @@ class BoardService {
   getOneBoard(seq) {
     return axios.get(BOARD_API_BASE_URL + "/" + seq);
   }
-  // 게시글 상세 페이지, 경로 파라미터로 seq 설정해 통신
+  // 게시글 상세, 경로 파라미터로 seq 설정해 통신
 
   updateBoard(seq, board) {
     return axios.put(BOARD_API_BASE_URL + "/" + seq, board);

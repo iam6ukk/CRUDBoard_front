@@ -28,7 +28,6 @@ class CreatBoardComponent extends Component {
     this.setState({ content: event.target.value });
   };
   // 폼 양식에 title, content 입력 시 state값 변경
-  // title, content에 값 대입, state update
 
   createBoard = (event) => {
     event.preventDefault();
@@ -38,6 +37,7 @@ class CreatBoardComponent extends Component {
       content: this.state.content,
     };
     console.log("board => " + JSON.stringify(board));
+    // json 객체 string으로 변환
     if (this.state.seq === "_create") {
       BoardService.createBoard(board).then((res) => {
         this.props.history.push("/board");
@@ -78,6 +78,7 @@ class CreatBoardComponent extends Component {
         });
         // 게시글 수정인 경우 해당 seq의 객체 값을 가져옴
         // board의 title, content가져와서 state update
+        // setState 호출 시 다시 렌더링됨
       });
     }
   }
